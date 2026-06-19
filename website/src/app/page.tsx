@@ -53,11 +53,14 @@ export default function Home() {
       <section className="proof-strip" aria-label="Review and service highlights">
         <div className="proof-grid">
           <a href={reviewSummary.href} className="proof-item">
+            <span className="proof-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </span>
             <strong>{reviewSummary.rating}</strong>
             <span>{reviewSummary.reviews}</span>
           </a>
           <a href={reviewSummary.href} className="proof-item">
-            <strong>Open Google</strong>
+            <strong>Google</strong>
             <span>Review profile</span>
           </a>
           <div className="proof-item">
@@ -65,8 +68,8 @@ export default function Home() {
             <span>Tailored to you</span>
           </div>
           <div className="proof-item">
-            <strong>Policy questions</strong>
-            <span>Call Jolie directly</span>
+            <strong>Insurance compliant</strong>
+            <span>Book or call to inquire</span>
           </div>
         </div>
       </section>

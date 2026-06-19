@@ -49,11 +49,11 @@ test.describe("Wigs by Jolie website", () => {
       }),
     ).toBeVisible();
 
+    await expect(page.getByRole("link", { name: /^5 out of 5 stars 55 Google reviews$/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /^Google Review profile$/i })).toBeVisible();
-    await expect(page.getByRole("link", { name: /^Open Google Review profile$/i })).toBeVisible();
-    await expect(page.getByText("Call Jolie directly", { exact: true })).toBeVisible();
+    await expect(page.getByText("Insurance compliant", { exact: true })).toBeVisible();
+    await expect(page.getByText("Book or call to inquire", { exact: true })).toBeVisible();
     await expect(page.getByText(/tailored to you/i)).toBeVisible();
-    await expect(page.getByText(/policy questions/i)).toBeVisible();
     await expect(page.getByText(/human hair and synthetic options/i)).toBeVisible();
     await expect(page.getByText(/hairpieces, men's pieces, extensions, and toppers/i)).toBeVisible();
     await expect(page.getByRole("img", { name: /premium wig showroom/i })).toBeVisible();
@@ -125,7 +125,7 @@ test.describe("Wigs by Jolie website", () => {
     await expect(page.getByRole("heading", { name: "Heidi Feser" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Anne Marie Spiliotis" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Jacqueline Kaufman" })).toBeVisible();
-    await expect(page.getByLabel("5 out of 5 stars")).toHaveCount(3);
+    await expect(page.locator(".review-proof-section").getByLabel("5 out of 5 stars")).toHaveCount(3);
     await expect(page.getByRole("link", { name: /read on google/i })).toHaveCount(3);
     await expect(page.getByRole("img", { name: /deerfield beach shoreline and pier/i })).toBeVisible();
 
