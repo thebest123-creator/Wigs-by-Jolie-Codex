@@ -1,0 +1,46 @@
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Dependencies and package manager state
+**/node_modules/
+**/.pnp
+**/.pnp.*
+
+# Framework and production outputs
+**/.next/
+**/out/
+**/build/
+**/dist/
+
+# Test and coverage outputs
+**/coverage/
+**/playwright-report/
+**/test-results/
+
+# TypeScript and development artifacts
+**/*.tsbuildinfo
+**/next-env.d.ts
+**/.dev-server.pid
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.pnpm-debug.log*
+
+# Local OS and Codex tooling
+.DS_Store
+Thumbs.db
+.agents/
+.codex/
+
+# Internal generated visual-review captures
+screenshots/
