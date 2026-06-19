@@ -163,7 +163,7 @@ export default function Home() {
         <div className="site-shell review-proof-grid">
           <div className="review-proof-heading">
             <p className="eyebrow">Real Google reviews</p>
-            <h2 id="review-proof-title">See What Your Neighbors Are Saying About Us.</h2>
+            <h2 id="review-proof-title">See What Your Neighbors Are Saying About Us</h2>
           </div>
           {googleReviewProof.map((review) => (
             <article className="review-proof-card" key={review.name}>

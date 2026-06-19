@@ -1015,6 +1015,7 @@ p {
   color: rgba(17, 13, 11, 0.76);
   font-size: 0.98rem;
   line-height: 1.55;
+  white-space: pre-line;
 }
 
 .review-proof-card-topline {

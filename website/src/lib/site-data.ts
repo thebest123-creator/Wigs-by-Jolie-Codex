@@ -65,19 +65,24 @@ export const googleReviewProof = [
   {
     name: "Heidi Feser",
     date: "3 months ago",
-    body: "Hands down this is the best place to get your hair. They have so many styles to choose from. Whether you need just a topper or a full wig, Nira will find something to your liking. She sells synthetic and human hair wigs and services them so you are always looking your best.",
+    body: `Hands down this is the best place to get your hair. They have so many styles to choose from. Whether you need just a topper or a full wig, Nira will find something to your liking. She sells synthetic and human hair wigs. She also services them so you're always looking your best. She is very thorough and provides premier customer service without being pushy. She never makes me feel like she's there just to sell hair. She makes everyone feel beautiful.
+Stop in and find the look for you!`,
     href: "https://www.google.com/maps/contrib/104931042060488826429/reviews?hl=en",
   },
   {
     name: "Anne Marie Spiliotis",
     date: "2 weeks ago",
-    body: "I walked in with a topper I purchased from somewhere else that I needed help with. The women greeted me so kindly. She did not make me feel badly that I did not purchase from there and showed me how to better wear it. I could not be happier. I will be going back there to purchase in the future.",
+    body: `I walked in yesterday with a topper I purchased from somewhere else that i needed help with. It seems to be too much hair for me. the women greeted me so kindly when I walked in. She did not make me feel badly that I did not purchase from there and proceeded to put the piece on my head and rearrange my hair to show me how to better wear It. Then she suggested a bang would help and offered to cut my band slightly to help. She charged me $10 and I could not be happier. I will be going back there to purchase in the future. love this place!!!!!`,
     href: "https://www.google.com/maps/contrib/100496398906071961786/reviews?hl=en",
   },
   {
     name: "Jacqueline Kaufman",
     date: "6 years ago",
-    body: "I went to Wigs By Jolie hoping to find a topper. The owner seemed to know exactly what would work for me and found a wig that matched my dyed hair color. She trimmed it and added clips so I could easily put it on myself and feel good about my hair again. Was it worth it? Yes!",
+    body: `I went to Wigs By Jolie hoping to find a "topper". I had ordered a wig on line and was not entirely satisfied with it, so before I tried a different wig from an on-line seller, I wanted to go to a retail store and see if they could make my shopping easier, and get some expert advice.
+
+At 72, my thinning hair around the crown was becoming very noticeable. I went there without an appointment, and was lucky, because I ended up with the owner helping me. She seemed to know exactly what would work for me, and found a wig that matched my dyed hair color with a human hair & synthetic hair wig with soft highlights. She trimmed it and added clips to it to make it into a topper that I could easily put on myself, and feel good again about my hair again. No one really knows, or at least they haven't asked me if I'm wearing a topper, and I am pleased about that too. I've had a few compliments on how healthy and full my hair looks.
+
+I have owned it for about 2 months now, washed it with no problems, and am very happy overall. Was it inexpensive? No, but was it worth it? Yes! You get what you pay for in this world, and I'm very happy with my purchase. Thank you!`,
     href: "https://www.google.com/maps/contrib/112785307719145900836/reviews?hl=en-US",
   },
 ];
