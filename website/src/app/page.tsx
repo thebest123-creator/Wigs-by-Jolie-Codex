@@ -159,14 +159,20 @@ export default function Home() {
       <section id="reviews" className="section review-proof-section" aria-labelledby="review-proof-title">
         <div className="site-shell review-proof-grid">
           <div className="review-proof-heading">
-            <p className="eyebrow">Google reviews</p>
-            <h2 id="review-proof-title">Start With the Public Review Profile.</h2>
+            <p className="eyebrow">Real Google reviews</p>
+            <h2 id="review-proof-title">See What Your Neighbors Are Saying About Us.</h2>
           </div>
           {googleReviewProof.map((review) => (
-            <article className="review-proof-card" key={review.title}>
-              <h3>{review.title}</h3>
-              <p>{review.body}</p>
-              <a href={reviewSummary.href}>Read on Google</a>
+            <article className="review-proof-card" key={review.name}>
+              <div className="review-proof-card-topline">
+                <span className="review-proof-stars" aria-label="5 out of 5 stars">
+                  ★★★★★
+                </span>
+                <span className="review-proof-date">{review.date}</span>
+              </div>
+              <h3>{review.name}</h3>
+              <blockquote>{review.body}</blockquote>
+              <a href={review.href}>Read on Google</a>
             </article>
           ))}
         </div>

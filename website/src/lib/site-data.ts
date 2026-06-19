@@ -63,16 +63,22 @@ export const googleReviewHighlights = [
 
 export const googleReviewProof = [
   {
-    title: "Read the Google profile",
-    body: "Use the public Google profile as a starting point for current reviews, then contact Wigs by Jolie directly with questions.",
+    name: "Heidi Feser",
+    date: "3 months ago",
+    body: "Hands down this is the best place to get your hair. They have so many styles to choose from. Whether you need just a topper or a full wig, Nira will find something to your liking. She sells synthetic and human hair wigs and services them so you are always looking your best.",
+    href: "https://www.google.com/maps/contrib/104931042060488826429/reviews?hl=en",
   },
   {
-    title: "Ask before you book",
-    body: "Confirm current consultation details, fees, availability, and policies with Jolie before treating a request as an appointment.",
+    name: "Anne Marie Spiliotis",
+    date: "2 weeks ago",
+    body: "I walked in with a topper I purchased from somewhere else that I needed help with. The women greeted me so kindly. She did not make me feel badly that I did not purchase from there and showed me how to better wear it. I could not be happier. I will be going back there to purchase in the future.",
+    href: "https://www.google.com/maps/contrib/100496398906071961786/reviews?hl=en",
   },
   {
-    title: "Choose guidance first",
-    body: "You can begin with questions about fit, coverage, comfort, color, styling, care, or which type of hair solution to consider.",
+    name: "Jacqueline Kaufman",
+    date: "6 years ago",
+    body: "I went to Wigs By Jolie hoping to find a topper. The owner seemed to know exactly what would work for me and found a wig that matched my dyed hair color. She trimmed it and added clips so I could easily put it on myself and feel good about my hair again. Was it worth it? Yes!",
+    href: "https://www.google.com/maps/contrib/112785307719145900836/reviews?hl=en-US",
   },
 ];
 

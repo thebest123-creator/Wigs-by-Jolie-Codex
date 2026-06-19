@@ -1002,7 +1002,7 @@ p {
 }
 
 .review-proof-card h3 {
-  margin-top: 1rem;
+  margin-top: 0.9rem;
   font-family: var(--font-sans), Arial, sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.2rem);
   font-style: italic;
@@ -1010,16 +1010,42 @@ p {
   line-height: 1.25;
 }
 
-.review-proof-card p {
+.review-proof-card blockquote {
   margin: 0.75rem 0 1.25rem;
+  color: rgba(17, 13, 11, 0.76);
   font-size: 0.98rem;
   line-height: 1.55;
 }
 
+.review-proof-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.review-proof-stars {
+  color: var(--gilded-deep);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.review-proof-date {
+  color: rgba(17, 13, 11, 0.54);
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+
 .review-proof-card a {
+  width: fit-content;
+  border-bottom: 1px solid rgba(159, 108, 40, 0.45);
+  padding-bottom: 0.2rem;
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.08em;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
