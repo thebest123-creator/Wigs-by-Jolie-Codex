@@ -159,3 +159,31 @@ Current usage:
 - Development labels may appear only when a development flag is enabled.
 - Aspect ratios must remain stable so final imagery does not shift layout.
 - Alt text should describe the intended final image category when imagery is real; placeholders use accessible labels that identify them as planned image areas without implying real people or client proof.
+
+## Shop Your Way Image Set
+
+The interactive `Shop Your Way` section appears on the homepage directly after `Inside the Boutique`. Its centralized card configuration is in `website/src/lib/shop-your-way-data.ts`. Add final files beneath `website/public/images/shop-your-way/`, then replace each card's `imageSrc: null` with its `suggestedImagePath` in that configuration file. If an assigned image cannot load, the labeled placeholder remains visible.
+
+### Length Images
+
+- IDs: `length-short`, `length-mid`, `length-long`, `length-extra-long`
+- Recommended source dimensions: 1200 x 1500 pixels.
+- Display aspect ratio: 4:5 portrait.
+- Composition: one clearly visible finished length per image, framed consistently from the front or three-quarter view.
+- Crop guidance: keep the full visible hair length inside the center 80% of the frame.
+
+### Color Images
+
+- IDs: `color-black`, `color-dark-brown`, `color-medium-brown`, `color-light-brown`, `color-red`, `color-blonde`, `color-grey`, `color-salt-and-pepper`
+- Recommended source dimensions: 1200 x 1200 pixels.
+- Display aspect ratio: 1:1 square.
+- Composition: close, evenly lit hair texture with the named color filling the frame.
+- Crop guidance: avoid faces, labels, and background objects so color remains the only signal.
+
+### Hair Type Images
+
+- IDs: `hair-processed-european`, `hair-premium-processed`, `hair-virgin-european`
+- Recommended source dimensions: 1600 x 1200 pixels.
+- Display aspect ratio: 4:3 landscape.
+- Composition: clear hair samples or product detail that distinguishes the named hair type without competitor branding.
+- Crop guidance: keep the full sample group in the center 85% of the frame.

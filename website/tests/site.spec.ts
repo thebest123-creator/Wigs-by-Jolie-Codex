@@ -60,6 +60,44 @@ test.describe("Wigs by Jolie website", () => {
     await expect(
       page.getByRole("heading", { name: /deerfield beach wig help, tailored around you/i }),
     ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Shop Your Way" })).toBeVisible();
+    const shopTabs = page.getByRole("tablist", { name: "Shop your way" });
+    await expect(shopTabs.getByRole("tab", { name: "Shop by Length" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    for (const label of [
+      "Short (Under 16\u201d)",
+      "Mid (17\u201d\u201320\u201d)",
+      "Long (21\u201d\u201325\u201d)",
+      "Extra Long (26\u201d+)",
+    ]) {
+      await expect(page.getByRole("heading", { name: label })).toBeVisible();
+    }
+
+    await shopTabs.getByRole("tab", { name: "Shop by Color" }).click();
+    for (const label of [
+      "Black",
+      "Dark Brown",
+      "Medium Brown",
+      "Light Brown",
+      "Red",
+      "Blonde",
+      "Grey",
+      "Salt and Pepper",
+    ]) {
+      await expect(page.getByRole("heading", { name: label, exact: true })).toBeVisible();
+    }
+
+    await shopTabs.getByRole("tab", { name: "Shop by Color" }).press("ArrowRight");
+    await expect(shopTabs.getByRole("tab", { name: "Shop by Hair Type" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    for (const label of ["Processed European", "Premium Processed", "Virgin European"]) {
+      await expect(page.getByRole("heading", { name: label, exact: true })).toBeVisible();
+    }
+    await expect(page.locator(".shop-way-placeholder")).toHaveCount(3);
     await expect(page.getByText(/wig tailoring is personal and all inclusive/i)).toBeVisible();
     await expect(page.getByText(/our entire process explained in 5 steps/i)).toBeVisible();
     await expect(

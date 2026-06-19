@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { ShopYourWay } from "@/components/ShopYourWay";
 import {
   business,
   consultationSteps,
@@ -98,6 +99,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ShopYourWay />
 
       <section className="inclusive-bar" aria-label="Wig tailoring process">
         <div className="site-shell inclusive-bar-inner">

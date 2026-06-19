@@ -648,6 +648,178 @@ p {
   color: var(--warm-white);
 }
 
+.shop-way-section {
+  border-top: 1px solid rgba(159, 108, 40, 0.14);
+  background: var(--shell);
+}
+
+.shop-way-heading {
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+}
+
+.shop-way-heading .eyebrow {
+  margin-bottom: 0.7rem;
+}
+
+.shop-way-heading h2 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+}
+
+.shop-way-tabs {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 3.25rem);
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(16, 12, 9, 0.32);
+  scrollbar-width: none;
+}
+
+.shop-way-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.shop-way-tabs button {
+  position: relative;
+  flex: 0 0 auto;
+  border: 0;
+  background: transparent;
+  color: rgba(16, 12, 9, 0.58);
+  cursor: pointer;
+  padding: 0.7rem 0 0.85rem;
+  font-size: clamp(0.83rem, 1.4vw, 0.98rem);
+  font-weight: 700;
+  line-height: 1.2;
+  transition: color 180ms ease;
+}
+
+.shop-way-tabs button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--gilded-deep);
+  opacity: 0;
+  transform: scaleX(0.5);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.shop-way-tabs button:hover,
+.shop-way-tabs button[aria-selected="true"] {
+  color: var(--gilded-deep);
+}
+
+.shop-way-tabs button[aria-selected="true"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.shop-way-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  animation: shop-way-panel-in 220ms ease-out;
+}
+
+.shop-way-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 12, 9, 0.09);
+  border-radius: 8px;
+  background: var(--warm-white);
+  box-shadow: 0 12px 32px rgba(31, 23, 18, 0.07);
+}
+
+.shop-way-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--champagne);
+}
+
+.shop-way-image-portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.shop-way-image-square {
+  aspect-ratio: 1;
+}
+
+.shop-way-image-landscape {
+  aspect-ratio: 4 / 3;
+}
+
+.shop-way-image img {
+  object-fit: cover;
+}
+
+.shop-way-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background:
+    linear-gradient(135deg, rgba(212, 170, 98, 0.1), transparent 54%),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(159, 108, 40, 0.045) 0,
+      rgba(159, 108, 40, 0.045) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    var(--champagne);
+  color: var(--cocoa);
+  text-align: center;
+}
+
+.shop-way-placeholder span {
+  color: var(--gilded-deep);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.shop-way-placeholder strong {
+  overflow-wrap: anywhere;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-weight: 650;
+  line-height: 1.1;
+}
+
+.shop-way-card h3 {
+  display: grid;
+  min-height: 62px;
+  place-items: center;
+  margin: 0;
+  padding: 0.85rem 0.75rem;
+  color: var(--ink);
+  font-family: var(--font-sans), Arial, sans-serif;
+  font-size: clamp(0.88rem, 1.5vw, 1rem);
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@keyframes shop-way-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .inclusive-bar {
   background: var(--ivory);
   text-align: center;
@@ -1562,6 +1734,10 @@ label {
   .review-carousel {
     grid-auto-columns: minmax(260px, 31%);
   }
+
+  .shop-way-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1579,6 +1755,17 @@ label {
 
   .boutique-proof-photo img {
     object-position: center 48%;
+  }
+
+  .shop-way-grid-length,
+  .shop-way-grid-color {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .shop-way-grid-hair-type {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(100%, 940px);
+    margin-inline: auto;
   }
 }
 
@@ -1742,6 +1929,28 @@ label {
     padding-inline: 0.3rem;
     font-size: 0.74rem;
     letter-spacing: 0.09em;
+  }
+
+  .shop-way-heading {
+    text-align: left;
+  }
+
+  .shop-way-tabs {
+    justify-content: flex-start;
+  }
+
+  .shop-way-card h3 {
+    min-height: 68px;
+    padding-inline: 0.45rem;
+    font-size: 0.82rem;
+  }
+
+  .shop-way-placeholder {
+    padding-inline: 0.55rem;
+  }
+
+  .shop-way-placeholder strong {
+    font-size: 1rem;
   }
 }
 
