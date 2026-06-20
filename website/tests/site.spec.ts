@@ -51,8 +51,8 @@ test.describe("Wigs by Jolie website", () => {
 
     await expect(page.getByRole("link", { name: /^5 out of 5 stars 55 Google reviews$/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /^Google Review profile$/i })).toBeVisible();
-    await expect(page.getByText("Insurance compliant", { exact: true })).toBeVisible();
-    await expect(page.getByText("Book or call to inquire", { exact: true })).toBeVisible();
+    await expect(page.getByText("Private guidance", { exact: true })).toBeVisible();
+    await expect(page.getByText("Book or call to ask", { exact: true })).toBeVisible();
     await expect(page.getByText(/tailored to you/i)).toBeVisible();
     await expect(page.getByText(/human hair and synthetic options/i)).toBeVisible();
     await expect(page.getByText(/hairpieces, men's pieces, extensions, and toppers/i)).toBeVisible();

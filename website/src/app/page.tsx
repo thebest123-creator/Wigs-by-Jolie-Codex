@@ -68,8 +68,8 @@ export default function Home() {
             <span>Tailored to you</span>
           </div>
           <div className="proof-item">
-            <strong>Insurance compliant</strong>
-            <span>Book or call to inquire</span>
+            <strong>Private guidance</strong>
+            <span>Book or call to ask</span>
           </div>
         </div>
       </section>
