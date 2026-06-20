@@ -5,9 +5,9 @@ This folder converts the approved Version 2 Next.js homepage into plain HTML, CS
 ## Before You Start
 
 1. Work in a duplicate or unpublished HighLevel page until the complete page has been tested.
-2. Upload the required images before pasting the image-led sections.
+2. Upload the supplied project images before pasting the image-led sections.
 3. Build the consultation form as a native HighLevel form. Do not paste a disconnected HTML form.
-4. Do not publish the Shop Your Way section until its final category images are supplied or approved.
+4. The supplied Shop Your Way images are already mapped in the project; upload those exact files to HighLevel rather than substituting new imagery.
 
 ## Recommended Page Structure
 
@@ -133,7 +133,7 @@ Use **Save** for an unpublished version. Use **Publish** only after the tests ab
 | `wigs-by-jolie-counter-team.jpg` | `website/public/images/wigs-by-jolie-counter-team.jpg` |
 | `deerfield-beach-pier.jpg` | `website/public/images/deerfield-beach-pier.jpg` |
 
-Shop Your Way still needs the category images documented in `IMAGE-PLAN.md`. Its current neutral image wells preserve the approved layout without presenting stock imagery as real products or clients.
+Shop Your Way uses optimized WebP deployment copies of the supplied category image set in `website/public/images/shop-your-way/`. Upload all 16 WebP files to HighLevel Media and replace the matching `REPLACE_IMAGE_URL_...` tokens in `05-shop-your-way.html`. The untouched supplied PNG originals remain in `assets/originals/shop-your-way/`.
 
 ## Known Launch Dependencies
 

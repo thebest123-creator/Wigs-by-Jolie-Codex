@@ -162,7 +162,7 @@ Current usage:
 
 ## Shop Your Way Image Set
 
-The interactive `Shop Your Way` section appears on the homepage directly after `Inside the Boutique`. Its centralized card configuration is in `website/src/lib/shop-your-way-data.ts`. Add final files beneath `website/public/images/shop-your-way/`, then replace each card's `imageSrc: null` with its `suggestedImagePath` in that configuration file. If an assigned image cannot load, the labeled placeholder remains visible.
+The interactive `Shop Your Way` section appears on the homepage directly after `Inside the Boutique`. Andres supplied the complete category image set on 2026-06-19. Preserved source copies are in `assets/originals/shop-your-way/`; deployment copies are in `website/public/images/shop-your-way/`; the centralized card configuration is in `website/src/lib/shop-your-way-data.ts`. All cards now use supplied images and fall back only if an assigned file fails to load.
 
 ### Length Images
 
@@ -182,7 +182,7 @@ The interactive `Shop Your Way` section appears on the homepage directly after `
 
 ### Hair Type Images
 
-- IDs: `hair-processed-european`, `hair-premium-processed`, `hair-virgin-european`
+- IDs: `hair-human-hair`, `hair-processed-european`, `hair-premium-processed`, `hair-virgin-european`
 - Recommended source dimensions: 1600 x 1200 pixels.
 - Display aspect ratio: 4:3 landscape.
 - Composition: clear hair samples or product detail that distinguishes the named hair type without competitor branding.

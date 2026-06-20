@@ -94,10 +94,11 @@ test.describe("Wigs by Jolie website", () => {
       "aria-selected",
       "true",
     );
-    for (const label of ["Processed European", "Premium Processed", "Virgin European"]) {
+    for (const label of ["Human Hair", "Processed European", "Premium Processed", "Virgin European"]) {
       await expect(page.getByRole("heading", { name: label, exact: true })).toBeVisible();
     }
-    await expect(page.locator(".shop-way-placeholder")).toHaveCount(3);
+    await expect(page.locator(".shop-way-placeholder")).toHaveCount(0);
+    await expect(page.locator(".shop-way-image img")).toHaveCount(4);
     await expect(page.getByText(/wig tailoring is personal and all inclusive/i)).toBeVisible();
     await expect(page.getByText(/our entire process explained in 5 steps/i)).toBeVisible();
     await expect(

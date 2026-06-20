@@ -778,22 +778,6 @@ p {
   text-align: center;
 }
 
-.shop-way-placeholder span {
-  color: var(--gilded-deep);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.shop-way-placeholder strong {
-  overflow-wrap: anywhere;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-  font-weight: 650;
-  line-height: 1.1;
-}
-
 .shop-way-card h3 {
   display: grid;
   min-height: 62px;
@@ -1972,13 +1956,6 @@ label {
     font-size: 0.82rem;
   }
 
-  .shop-way-placeholder {
-    padding-inline: 0.55rem;
-  }
-
-  .shop-way-placeholder strong {
-    font-size: 1rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

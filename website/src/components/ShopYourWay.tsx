@@ -29,14 +29,7 @@ function ShopImage({
           onError={() => setImageFailed(true)}
         />
       ) : (
-        <div
-          className="shop-way-placeholder"
-          role="img"
-          aria-label={`${item.imageAlt}. Placeholder image ID: ${item.id}.`}
-        >
-          <span>Image placeholder</span>
-          <strong>{item.id}</strong>
-        </div>
+        <div className="shop-way-placeholder" aria-hidden="true" />
       )}
     </div>
   );
