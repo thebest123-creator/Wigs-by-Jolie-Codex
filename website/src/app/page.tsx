@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { ShopYourWay } from "@/components/ShopYourWay";
 import {
   business,
   consultationSteps,
@@ -52,11 +53,14 @@ export default function Home() {
       <section className="proof-strip" aria-label="Review and service highlights">
         <div className="proof-grid">
           <a href={reviewSummary.href} className="proof-item">
+            <span className="proof-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </span>
             <strong>{reviewSummary.rating}</strong>
             <span>{reviewSummary.reviews}</span>
           </a>
           <a href={reviewSummary.href} className="proof-item">
-            <strong>Open Google</strong>
+            <strong>Google</strong>
             <span>Review profile</span>
           </a>
           <div className="proof-item">
@@ -64,8 +68,8 @@ export default function Home() {
             <span>Tailored to you</span>
           </div>
           <div className="proof-item">
-            <strong>Policy questions</strong>
-            <span>Call Jolie directly</span>
+            <strong>Insurance compliant</strong>
+            <span>Book or call to inquire</span>
           </div>
         </div>
       </section>
@@ -98,6 +102,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ShopYourWay />
 
       <section className="inclusive-bar" aria-label="Wig tailoring process">
         <div className="site-shell inclusive-bar-inner">

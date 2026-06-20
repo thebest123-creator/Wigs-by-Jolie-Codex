@@ -36,8 +36,8 @@ export const navItems = [
 ];
 
 export const reviewSummary = {
-  rating: "Google",
-  reviews: "Review profile",
+  rating: "55",
+  reviews: "Google reviews",
   googleReviews: "Google review profile",
   source: "Google",
   href: "https://www.google.com/maps/search/?api=1&query=Wigs%20by%20Jolie%201562%20SE%203rd%20Ct%2C%20Deerfield%20Beach%2C%20FL%2033441",
