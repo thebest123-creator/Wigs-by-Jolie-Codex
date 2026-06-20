@@ -82,11 +82,15 @@ test.describe("Wigs by Jolie website", () => {
     ).toBeVisible();
     await expect(page.getByRole("region", { name: /wig consultation process/i })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: /start with the public review profile/i }),
+      page.getByRole("heading", { name: /see what your neighbors are saying about us/i }),
     ).toBeVisible();
-    await expect(page.getByRole("heading", { name: /read the google profile/i })).toBeVisible();
-    await expect(page.getByRole("heading", { name: /ask before you book/i })).toBeVisible();
-    await expect(page.getByRole("heading", { name: /choose guidance first/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Heidi Feser" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Anne Marie Spiliotis" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Jacqueline Kaufman" })).toBeVisible();
+    await expect(page.getByText(/She makes everyone feel beautiful/)).toBeVisible();
+    await expect(page.getByText(/She charged me \$10 and I could not be happier/)).toBeVisible();
+    await expect(page.getByText(/You get what you pay for in this world/)).toBeVisible();
+    await expect(page.locator(".review-proof-section").getByLabel("5 out of 5 stars")).toHaveCount(3);
     await expect(page.getByRole("link", { name: /read on google/i })).toHaveCount(3);
     await expect(page.getByRole("img", { name: /deerfield beach shoreline and pier/i })).toBeVisible();
 
