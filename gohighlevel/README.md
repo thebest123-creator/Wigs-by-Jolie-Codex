@@ -1,144 +1,171 @@
-# Wigs by Jolie Version 2 — GoHighLevel Build Kit
+# Wigs by Jolie — GoHighLevel Beginner Build Guide
 
-This folder converts the approved Version 2 Next.js homepage into plain HTML, CSS, and small JavaScript snippets that can be assembled inside HighLevel. The section files are intentionally independent so the page can be built and adjusted one section at a time.
+This package recreates the approved homepage as separate Custom HTML sections in HighLevel. The current build intentionally omits `05-shop-your-way.html`.
 
-## Before You Start
+Keep the Wix website live while you build this version on an unpublished HighLevel page. Do not connect the client’s domain until the design, links, form submission, mobile layout, and client approval are complete.
 
-1. Work in a duplicate or unpublished HighLevel page until the complete page has been tested.
-2. Upload the supplied project images before pasting the image-led sections.
-3. Build the consultation form as a native HighLevel form. Do not paste a disconnected HTML form.
-4. The supplied Shop Your Way images are already mapped in the project; upload those exact files to HighLevel rather than substituting new imagery.
+## What Goes Where
 
-## Recommended Page Structure
+| File | Paste location |
+|---|---|
+| `00-head-code.html` | Page or site Head Tracking Code |
+| `00-global-styles.css` | Page Settings → Custom CSS |
+| `00-footer-scripts.js` | Footer Tracking Code, between `<script>` and `</script>` |
+| Numbered `.html` files | One Custom HTML/JS element per section |
 
-Add the files in this order:
+The exact menu names can vary slightly by HighLevel account or builder version. If the editor uses “Custom Code,” “HTML,” or “Custom JS/HTML,” use the element that accepts HTML markup.
+
+## Step 1 — Create a Safe Test Page
+
+1. Open the Wigs by Jolie HighLevel sub-account.
+2. Go to **Sites → Websites**.
+3. Create a new website or duplicate an unpublished page.
+4. Name it `Wigs by Jolie - Client Preview`.
+5. Do not attach the Wix domain yet.
+6. Open the page editor.
+
+## Step 2 — Install the Shared Code Once
+
+1. Open the page settings or tracking-code settings.
+2. Copy all of `00-head-code.html` into **Head Tracking Code**.
+3. Copy all of `00-global-styles.css` into **Custom CSS**. Do not put the CSS inside a Custom HTML section.
+4. Open **Footer Tracking Code**.
+5. Enter `<script>`, paste all of `00-footer-scripts.js`, and then enter `</script>`.
+6. Save the page.
+
+HighLevel may not fully render custom code on the editing canvas. Use the page’s Preview mode after saving.
+
+## Step 3 — Upload the Ten Required Images
+
+Open HighLevel’s Media area and upload these exact files from `website/public/images/`:
+
+1. `wigs-by-jolie-showroom-banner.jpg`
+2. `wigs-by-jolie-mobile-banner.png`
+3. `wigs-by-jolie-boutique-group.jpg`
+4. `steps/step-01-consultation.png`
+5. `steps/step-02-options.png`
+6. `steps/step-03-fit-finish.png`
+7. `steps/step-04-follow-up.png`
+8. `steps/step-05-confident.png`
+9. `wigs-by-jolie-counter-team.jpg`
+10. `deerfield-beach-pier.jpg`
+
+Copy the public HighLevel URL for each uploaded image. In the section files, replace the complete matching token beginning with `REPLACE_IMAGE_URL_` with that URL. Do not remove the quotation marks around the URL.
+
+Example:
+
+```html
+src="REPLACE_IMAGE_URL_deerfield-beach-pier.jpg"
+```
+
+becomes:
+
+```html
+src="https://your-highlevel-media-url.example/deerfield-beach-pier.jpg"
+```
+
+The image tokens are intentionally not live links. Images will appear broken until these replacements are made.
+
+## Step 4 — Add the Sections in This Exact Order
+
+For every section below:
+
+1. Add a blank full-width section.
+2. Add one row and one full-width column.
+3. Set the HighLevel section, row, and column padding to `0`.
+4. Drag in one Custom HTML/JS element.
+5. Paste the complete contents of the listed file.
+6. Save.
+7. Preview before adding the next section.
+
+Active order:
 
 1. `01-header.html`
 2. `02-hero.html`
 3. `03-proof-strip.html`
 4. `04-boutique.html`
-5. `05-shop-your-way.html`
-6. `06-process-banner.html`
-7. `07-process.html`
-8. `08-about.html`
-9. `09-reviews.html`
-10. `10-faq.html`
-11. `11-local.html`
-12. `12-consultation-intro.html` plus a native HighLevel Form element
-13. `13-visit.html`
-14. `14-footer.html`
-15. `15-mobile-actions.html`
+5. `06-process-banner.html`
+6. `07-process.html`
+7. `08-about.html`
+8. `09-reviews.html`
+9. `10-faq.html`
+10. `11-local.html`
+11. Consultation section described below
+12. `13-visit.html`
+13. `14-footer.html`
+14. `15-mobile-actions.html`
 
-## HighLevel Installation
+Do not add `05-shop-your-way.html` for this version.
 
-### 1. Create or open the homepage
+## Step 5 — Build the Consultation Section Natively
 
-In the Wigs by Jolie sub-account, open **Sites → Websites**, select the website, open the homepage, and choose **Edit**. HighLevel’s current builder uses sections, rows, columns, and elements. Keep each numbered file in its own Custom HTML/JS element so later edits remain manageable.
+Use a native HighLevel form so submissions create contacts and can trigger workflows.
 
-Official reference: [HighLevel Websites Overview](https://help.gohighlevel.com/support/solutions/articles/155000001633-websites-overview)
+1. Add a normal HighLevel section. Leave the builder's optional HTML ID field blank because the included code already supplies `consultation`.
+2. Add a two-column row.
+3. In the left column, add a Custom HTML/JS element and paste `12-consultation-intro.html`.
+4. In the right column, add a native HighLevel Form element.
+5. Create or select a form containing:
+   - Name — required
+   - Phone
+   - Email
+   - What would you like help with? — required dropdown
+   - Preferred contact method
+   - Message — optional
+6. Dropdown choices:
+   - I’m not sure yet
+   - Wigs and hairpieces
+   - Toppers and coverage
+   - Extensions and added volume
+   - Styling, maintenance, and care
+7. Require at least one usable contact method through the form or workflow configuration.
+8. Use this success message: **Thank you. Your request was received. This is not a confirmed appointment; Wigs by Jolie will contact you.**
+9. Do not ask for diagnoses, treatment information, or other sensitive medical details.
 
-### 2. Install the shared code once
+## Step 6 — Understand the Links
 
-- Paste `00-head-code.html` into the site or page **Head Tracking Code** area.
-- Paste the complete contents of `00-global-styles.css` into the page’s **Custom CSS** area.
-- Paste `00-footer-scripts.js` into **Footer Tracking Code**, wrapped in `<script>` and `</script>` tags.
-- Save, then use **Preview Custom Code** or open the page preview. HighLevel’s editor may not execute custom code directly on the canvas.
+- `#top`, `#services`, `#process`, `#reviews`, `#consultation`, and `#visit` are same-page anchors. They work only after all matching sections are present on the same HighLevel page.
+- `tel:+19549755874` opens the device’s phone application. It normally does not place a call from a desktop browser.
+- `mailto:wigsbyjolie@gmail.com` opens the visitor’s configured email application.
+- The Google Maps and individual Google review links were checked and currently return successfully.
+- The footer intentionally omits Privacy and Terms links until real HighLevel pages and approved legal content exist. Do not add dead `/privacy` or `/terms` links.
 
-If Google-hosted fonts are not appropriate for the final privacy configuration, omit `00-head-code.html`; the CSS includes Georgia and Arial fallbacks.
+## Step 7 — Page Settings
 
-### 3. Upload and connect images
-
-In HighLevel, go to **Settings → Media**, choose **Upload File**, and upload the files listed in the asset map below. Copy the shareable URL for each uploaded image. In every HTML snippet, replace the matching `REPLACE_IMAGE_URL_...` token with that full URL.
-
-Do not publish while any `REPLACE_IMAGE_URL_` token remains.
-
-### 4. Add each page section
-
-For each numbered HTML file:
-
-1. Add a new blank section or row.
-2. Add one full-width column unless the form instructions say otherwise.
-3. Search **Add Element** for the custom HTML/code element and drag it into the column.
-4. Paste the file’s complete contents.
-5. Remove HighLevel’s default section/row/column padding so the snippet controls its own spacing.
-6. Save and preview before adding the next section.
-
-Save the header and footer as **Global Sections** after they are working. HighLevel documents Global Sections as reusable sections whose later changes update every page using them.
-
-### 5. Build the consultation form natively
-
-Create a two-column HighLevel section near the bottom of the page:
-
-- Left column: Custom HTML element containing `12-consultation-intro.html`.
-- Right column: native HighLevel Form element.
-
-From the builder’s Forms & Surveys area, choose **Create New** or **Add Existing**, then drag the form into the right column. Use these fields:
-
-- Name — required
-- Phone
-- Email
-- What would you like help with? — required dropdown
-  - I’m not sure yet
-  - Wigs and hairpieces
-  - Toppers and coverage
-  - Extensions and added volume
-  - Styling, maintenance, and care
-- Preferred contact method — Phone, Email, or Either
-- Message — optional; instruct visitors not to include medical diagnoses or sensitive treatment details
-
-Require at least one usable contact method through the form configuration or follow-up workflow. The post-submit message should say: **“Thank you. Your request was received. This is not a confirmed appointment; Wigs by Jolie will contact you.”**
-
-Submit a real test and verify it appears under **Sites → Forms → Submissions** before publishing. HighLevel’s current form documentation specifically recommends this save, preview, test, and submission-check workflow.
-
-Official reference: [Create Forms & Surveys Inside the Site Builder](https://help.gohighlevel.com/support/solutions/articles/155000006719-create-forms-surveys-inside-the-site-builder)
-
-### 6. Configure page settings
-
-- Page path: `/`
-- H1: keep only the hero heading as the page H1
-- Title: `Wigs by Jolie | Premium Wigs in Deerfield Beach`
+- Page path: use a temporary preview path until approval.
+- Page title: `Wigs by Jolie | Premium Wigs in Deerfield Beach`
 - Meta description: `Premium wigs, toppers, extensions, styling, and care with private guidance in Deerfield Beach, Florida.`
-- Add the approved favicon only after its asset is confirmed.
-- Keep image optimization enabled.
-- Do not enable an unplanned chat widget.
+- Keep only the hero’s “Elegance defined by artistry.” as the page H1.
+- Do not add a calendar, live chat, or automated appointment-confirmation claim yet.
 
-### 7. Test before publishing
+## Step 8 — Test Before Showing the Client
 
-Use Preview and check at minimum:
+1. Search the page code for `REPLACE_IMAGE_URL_`. The result must be zero.
+2. Preview at approximately 390px, 768px, and 1440px widths.
+3. Click every header and footer navigation link.
+4. Click every Book button and confirm it scrolls to the consultation form.
+5. Test the phone link on a phone.
+6. Test email, Google Maps, Google review, and embedded map links.
+7. Open and close every FAQ with keyboard and touch.
+8. Submit the form with test contact information.
+9. Verify the submission appears under HighLevel form submissions and creates or updates the correct contact.
+10. Verify the notification or workflow reaches the intended inbox before promising delivery to the client.
+11. Confirm the mobile action bar does not cover the form or footer.
+12. Refresh the Google review count and relative dates immediately before publication.
 
-- 390px mobile, 768px tablet, and 1440px desktop
-- no horizontal overflow
-- Shop Your Way tabs work with click, Left/Right Arrow, Home, and End
-- FAQ controls open with keyboard and touch
-- every Book link reaches `#consultation`
-- phone, email, directions, Google review, and map links work
-- the mobile action bar does not cover the form or footer
-- form validation, submission, CRM record, notification, and thank-you message work
-- no image replacement token or internal instruction appears publicly
+Run the local structural audit at any time with:
 
-Use **Save** for an unpublished version. Use **Publish** only after the tests above pass; HighLevel distinguishes the saved draft from the live published version.
+```powershell
+node gohighlevel/audit-links.mjs
+```
 
-## Asset Map
+## Still Required Before a Domain Switch
 
-| Token | Local source file |
-|---|---|
-| `wigs-by-jolie-mobile-banner.png` | `website/public/images/wigs-by-jolie-mobile-banner.png` |
-| `wigs-by-jolie-showroom-banner.jpg` | `website/public/images/wigs-by-jolie-showroom-banner.jpg` |
-| `wigs-by-jolie-boutique-group.jpg` | `website/public/images/wigs-by-jolie-boutique-group.jpg` |
-| `step-01-consultation.png` | `website/public/images/steps/step-01-consultation.png` |
-| `step-02-options.png` | `website/public/images/steps/step-02-options.png` |
-| `step-03-fit-finish.png` | `website/public/images/steps/step-03-fit-finish.png` |
-| `step-04-follow-up.png` | `website/public/images/steps/step-04-follow-up.png` |
-| `step-05-confident.png` | `website/public/images/steps/step-05-confident.png` |
-| `wigs-by-jolie-counter-team.jpg` | `website/public/images/wigs-by-jolie-counter-team.jpg` |
-| `deerfield-beach-pier.jpg` | `website/public/images/deerfield-beach-pier.jpg` |
+- Client approval
+- Confirmed form notification inbox and workflow
+- Approved Privacy and Terms pages
+- Final review approval and refreshed dates/count
+- Confirmed domain and DNS migration plan
+- Live mobile, accessibility, and submission testing
 
-Shop Your Way uses optimized WebP deployment copies of the supplied category image set in `website/public/images/shop-your-way/`. Upload all 16 WebP files to HighLevel Media and replace the matching `REPLACE_IMAGE_URL_...` tokens in `05-shop-your-way.html`. The untouched supplied PNG originals remain in `assets/originals/shop-your-way/`.
-
-## Known Launch Dependencies
-
-- The preferred live form-delivery workflow and notification inbox still need confirmation.
-- Business hours, consultation fee, and appointment-only status remain unverified.
-- Privacy and Terms pages need final approved legal content and correct HighLevel paths.
-- Review counts and relative review dates should be refreshed immediately before publication.
-- The finished HighLevel page still requires responsive, accessibility, and live submission testing.
+The Wix site should remain the production website until every item above is complete.

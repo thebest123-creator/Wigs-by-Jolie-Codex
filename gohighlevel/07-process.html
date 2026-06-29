@@ -1,31 +1,501 @@
-<!-- SECTION 07: Five-step consultation process. -->
-<section id="process" class="wbj wbj-section wbj-process" aria-labelledby="wbj-process-title">
-  <div class="wbj-shell wbj-process__list">
-    <h2 id="wbj-process-title" class="wbj-sr-only">Wig consultation process</h2>
+<!-- WIGS BY JOLIE: COMPLETE FIVE-STEP PROCESS SECTION -->
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap");
 
-    <article class="wbj-process__row">
-      <div class="wbj-process__copy"><span class="wbj-process__number">01.</span><h3>Start With a Private Consultation</h3><p>Meet privately with Jolie or one of her experienced wig specialists. Bring inspiration photos, share your concerns, or simply describe the look you want. Ask about lifestyle, preferences, comfort needs, budget, and current consultation details without pressure.</p><div class="wbj-process__links"><a href="#consultation">Book</a><a href="tel:+19549755874">Call</a></div></div>
-      <div class="wbj-process__image" data-image-id="step-01-consultation"><img src="REPLACE_IMAGE_URL_step-01-consultation.png" alt="Illustration of a private wig consultation in a boutique setting" width="1200" height="1000" loading="lazy"></div>
+  #wbj-process-section,
+  #wbj-process-section * {
+    box-sizing: border-box;
+  }
+
+  #wbj-process-section {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    background: #ffffff;
+    color: #30251f;
+    font-family: "Poppins", Arial, sans-serif;
+  }
+
+  #wbj-process-section .wbjp-intro {
+    border-bottom: 1px solid #e9ddce;
+  }
+
+  #wbj-process-section .wbjp-banner {
+    padding: clamp(25px, 3.5vw, 44px) 20px;
+    background: #dfcbb2;
+    text-align: center;
+  }
+
+  #wbj-process-section .wbjp-banner h2 {
+    margin: 0;
+    color: #5b2d0c;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(34px, 4vw, 58px);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  #wbj-process-section .wbjp-subbar {
+    padding: 18px 20px;
+    background: #f7f0e7;
+    text-align: center;
+  }
+
+  #wbj-process-section .wbjp-subbar p {
+    margin: 0;
+    color: #6b3512;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(19px, 2vw, 27px);
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  #wbj-process-section .wbjp-steps {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(74px, 9vw, 132px) 0;
+  }
+
+  #wbj-process-section .wbjp-step {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: clamp(54px, 8vw, 112px);
+    align-items: center;
+    min-height: 570px;
+    margin-bottom: clamp(82px, 11vw, 150px);
+  }
+
+  #wbj-process-section .wbjp-step:last-child {
+    margin-bottom: 0;
+  }
+
+  #wbj-process-section .wbjp-step:nth-child(even) {
+    grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
+  }
+
+  #wbj-process-section .wbjp-step:nth-child(even) .wbjp-copy {
+    order: 2;
+  }
+
+  #wbj-process-section .wbjp-step:nth-child(even) .wbjp-image {
+    order: 1;
+  }
+
+  #wbj-process-section .wbjp-copy,
+  #wbj-process-section .wbjp-image {
+    opacity: 0;
+    transition: opacity 700ms ease, transform 700ms ease;
+  }
+
+  #wbj-process-section .wbjp-copy {
+    padding-left: 34px;
+    border-left: 3px solid #d8ab5e;
+    transform: translateX(-46px);
+  }
+
+  #wbj-process-section .wbjp-image {
+    transform: translateX(46px);
+  }
+
+  #wbj-process-section .wbjp-step:nth-child(even) .wbjp-copy {
+    transform: translateX(46px);
+  }
+
+  #wbj-process-section .wbjp-step:nth-child(even) .wbjp-image {
+    transform: translateX(-46px);
+  }
+
+  #wbj-process-section .wbjp-step.wbjp-visible .wbjp-copy,
+  #wbj-process-section .wbjp-step.wbjp-visible .wbjp-image {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  #wbj-process-section .wbjp-number {
+    display: block;
+    margin-bottom: 24px;
+    color: #9f6c28;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1;
+  }
+
+  #wbj-process-section .wbjp-copy h3 {
+    margin: 0 0 25px;
+    color: #6a320f;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+
+  #wbj-process-section .wbjp-copy p {
+    margin: 0;
+    color: #3d312a;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  #wbj-process-section .wbjp-actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  #wbj-process-section .wbjp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 58px;
+    padding: 14px 20px;
+    border: 2px solid #d7aa5b;
+    border-radius: 2px;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 220ms ease, border-color 220ms ease,
+      color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  #wbj-process-section .wbjp-button--primary {
+    background: #d7aa5b;
+    color: #281b13;
+  }
+
+  #wbj-process-section .wbjp-button--phone {
+    background: #ffffff;
+    color: #805319;
+  }
+
+  #wbj-process-section .wbjp-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(91, 45, 12, 0.14);
+  }
+
+  #wbj-process-section .wbjp-button--primary:hover {
+    border-color: #c79745;
+    background: #c79745;
+  }
+
+  #wbj-process-section .wbjp-button--phone:hover {
+    background: #fff8ee;
+    color: #5b2d0c;
+  }
+
+  #wbj-process-section .wbjp-button:focus-visible {
+    outline: 3px solid rgba(159, 108, 40, 0.35);
+    outline-offset: 4px;
+  }
+
+  #wbj-process-section .wbjp-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+    background: #f2e7d9;
+    box-shadow: 0 24px 54px rgba(91, 45, 12, 0.12);
+  }
+
+  #wbj-process-section .wbjp-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(91, 45, 12, 0.1);
+    pointer-events: none;
+  }
+
+  #wbj-process-section .wbjp-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    transition: transform 700ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  }
+
+  #wbj-process-section .wbjp-image:hover img {
+    transform: scale(1.035);
+  }
+
+  @media (max-width: 900px) {
+    #wbj-process-section .wbjp-steps {
+      width: min(680px, calc(100% - 32px));
+    }
+
+    #wbj-process-section .wbjp-step,
+    #wbj-process-section .wbjp-step:nth-child(even) {
+      grid-template-columns: 1fr;
+      gap: 42px;
+      min-height: 0;
+      margin-bottom: 100px;
+    }
+
+    #wbj-process-section .wbjp-step .wbjp-copy,
+    #wbj-process-section .wbjp-step:nth-child(even) .wbjp-copy {
+      order: 1;
+    }
+
+    #wbj-process-section .wbjp-step .wbjp-image,
+    #wbj-process-section .wbjp-step:nth-child(even) .wbjp-image {
+      order: 2;
+    }
+
+    #wbj-process-section .wbjp-copy {
+      padding-left: 26px;
+    }
+
+    #wbj-process-section .wbjp-image,
+    #wbj-process-section .wbjp-image img {
+      min-height: min(620px, 118vw);
+    }
+  }
+
+  @media (max-width: 560px) {
+    #wbj-process-section .wbjp-banner {
+      padding: 28px 18px;
+    }
+
+    #wbj-process-section .wbjp-banner h2 {
+      font-size: 34px;
+    }
+
+    #wbj-process-section .wbjp-subbar {
+      padding: 15px 18px;
+    }
+
+    #wbj-process-section .wbjp-steps {
+      padding: 72px 0 82px;
+    }
+
+    #wbj-process-section .wbjp-step,
+    #wbj-process-section .wbjp-step:nth-child(even) {
+      gap: 34px;
+      margin-bottom: 86px;
+    }
+
+    #wbj-process-section .wbjp-copy {
+      padding-left: 20px;
+    }
+
+    #wbj-process-section .wbjp-number {
+      margin-bottom: 18px;
+    }
+
+    #wbj-process-section .wbjp-copy h3 {
+      margin-bottom: 21px;
+      font-size: clamp(39px, 10.5vw, 48px);
+      line-height: 1.02;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+      hyphens: none !important;
+    }
+
+    #wbj-process-section .wbjp-copy p {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    #wbj-process-section .wbjp-button {
+      min-height: 58px;
+      font-size: 13px;
+    }
+
+    #wbj-process-section .wbjp-image,
+    #wbj-process-section .wbjp-image img {
+      min-height: 112vw;
+      max-height: 600px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #wbj-process-section .wbjp-copy,
+    #wbj-process-section .wbjp-image,
+    #wbj-process-section .wbjp-image img,
+    #wbj-process-section .wbjp-button {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<section id="wbj-process-section" aria-labelledby="wbjp-main-title">
+  <header class="wbjp-intro">
+    <div class="wbjp-banner">
+      <h2 id="wbjp-main-title">Wig Tailoring Is Personal And All Inclusive</h2>
+    </div>
+    <div class="wbjp-subbar">
+      <p>Our Entire Process Explained In 5 Steps</p>
+    </div>
+  </header>
+
+  <div class="wbjp-steps">
+    <article class="wbjp-step">
+      <div class="wbjp-copy">
+        <span class="wbjp-number">01.</span>
+        <h3>Complimentary Fit, Color &amp; Style Consultation</h3>
+        <p>
+          Meet privately with Jolie or one of her experienced wig specialists.
+          Bring inspiration photos, share your concerns, or simply describe the
+          look you want. Together, you can discuss fit, color, style, comfort,
+          lifestyle preferences, budget, and the hair solutions that may suit
+          you best—all without pressure.
+        </p>
+        <div class="wbjp-actions">
+          <a class="wbjp-button wbjp-button--primary" href="#consultation">
+            Request My Complimentary Consultation
+          </a>
+          <a class="wbjp-button wbjp-button--phone" href="tel:+19549755874">
+            (954) 975-5874
+          </a>
+        </div>
+      </div>
+      <div class="wbjp-image">
+        <img
+          src="https://assets.cdn.filesafe.space/sGIiicZNhGBST5mFlpNt/media/6a38bb780a683b64fe6538f1.png"
+          alt="Private consultation with a wig specialist"
+          width="1200"
+          height="1000"
+          loading="lazy"
+        >
+      </div>
     </article>
 
-    <article class="wbj-process__row">
-      <div class="wbj-process__copy"><span class="wbj-process__number">02.</span><h3>Explore Options Selected for You</h3><p>You will not have to sort through every option alone. We will guide you toward the colors, lengths, textures, cap constructions, and materials that best complement your appearance, lifestyle, and personal preferences.</p></div>
-      <div class="wbj-process__image" data-image-id="step-02-options"><img src="REPLACE_IMAGE_URL_step-02-options.png" alt="Illustration of a wig specialist showing selected wig options" width="1200" height="1000" loading="lazy"></div>
+    <article class="wbjp-step">
+      <div class="wbjp-copy">
+        <span class="wbjp-number">02.</span>
+        <h3>Explore Options Selected for You</h3>
+        <p>
+          You will not have to sort through every option alone. We will guide
+          you toward colors, lengths, textures, cap constructions, and
+          materials that complement your appearance, lifestyle, and personal
+          preferences.
+        </p>
+      </div>
+      <div class="wbjp-image">
+        <img
+          src="https://assets.cdn.filesafe.space/sGIiicZNhGBST5mFlpNt/media/6a38bb7fc50697c411db288c.png"
+          alt="Wig specialist presenting personally selected options"
+          width="1200"
+          height="1000"
+          loading="lazy"
+        >
+      </div>
     </article>
 
-    <article class="wbj-process__row">
-      <div class="wbj-process__copy"><span class="wbj-process__number">03.</span><h3>Perfect the Fit and Finish</h3><p>Your selection will be professionally fitted, adjusted, and styled to achieve the right balance of comfort, security, color, movement, and a natural appearance.</p></div>
-      <div class="wbj-process__image" data-image-id="step-03-fit-finish"><img src="REPLACE_IMAGE_URL_step-03-fit-finish.png" alt="Illustration of a wig fitting and styling appointment" width="1200" height="1000" loading="lazy"></div>
+    <article class="wbjp-step">
+      <div class="wbjp-copy">
+        <span class="wbjp-number">03.</span>
+        <h3>Perfect the Fit and Finish</h3>
+        <p>
+          Your selection will be professionally fitted, adjusted, and styled
+          to achieve the right balance of comfort, security, color, movement,
+          and a natural appearance.
+        </p>
+      </div>
+      <div class="wbjp-image">
+        <img
+          src="https://assets.cdn.filesafe.space/sGIiicZNhGBST5mFlpNt/media/6a38bb8df2131051b84379ec.png"
+          alt="Professional wig fitting and styling"
+          width="1200"
+          height="1000"
+          loading="lazy"
+        >
+      </div>
     </article>
 
-    <article class="wbj-process__row">
-      <div class="wbj-process__copy"><span class="wbj-process__number">04.</span><h3>Ask About Follow-Up Support</h3><p>Before you leave the boutique, ask what follow-up help is available for fit, styling, care, or minor adjustments so you know how to keep your new look comfortable and beautiful.</p><div class="wbj-process__links"><a href="#consultation">Book</a><a href="tel:+19549755874">Call</a></div></div>
-      <div class="wbj-process__image" data-image-id="step-04-follow-up"><img src="REPLACE_IMAGE_URL_step-04-follow-up.png" alt="Illustration of follow-up support after a wig consultation" width="1200" height="1000" loading="lazy"></div>
+    <article class="wbjp-step">
+      <div class="wbjp-copy">
+        <span class="wbjp-number">04.</span>
+        <h3>Ask About Follow-Up Support</h3>
+        <p>
+          Before you leave the boutique, ask what follow-up help is available
+          for fit, styling, care, or minor adjustments so you know how to keep
+          your new look comfortable and beautiful.
+        </p>
+        <div class="wbjp-actions">
+          <a class="wbjp-button wbjp-button--primary" href="#consultation">
+            Request My Complimentary Consultation
+          </a>
+          <a class="wbjp-button wbjp-button--phone" href="tel:+19549755874">
+            (954) 975-5874
+          </a>
+        </div>
+      </div>
+      <div class="wbjp-image">
+        <img
+          src="https://assets.cdn.filesafe.space/sGIiicZNhGBST5mFlpNt/media/6a38bb931c5d711b35e8291c.png"
+          alt="Follow-up guidance from a wig specialist"
+          width="1200"
+          height="1000"
+          loading="lazy"
+        >
+      </div>
     </article>
 
-    <article class="wbj-process__row">
-      <div class="wbj-process__copy"><span class="wbj-process__number">05.</span><h3>Leave Confident and Prepared</h3><p>Leave with a look that feels like you and the knowledge to care for it properly. We will walk you through wearing, styling, storage, and maintenance so you feel comfortable and confident from day one.</p></div>
-      <div class="wbj-process__image" data-image-id="step-05-confident"><img src="REPLACE_IMAGE_URL_step-05-confident.png" alt="Illustration of clients leaving a boutique feeling confident" width="1200" height="1000" loading="lazy"></div>
+    <article class="wbjp-step">
+      <div class="wbjp-copy">
+        <span class="wbjp-number">05.</span>
+        <h3>Leave Confident and Prepared</h3>
+        <p>
+          Leave with a look that feels like you and the knowledge to care for
+          it properly. We will walk you through wearing, styling, storage, and
+          maintenance so you feel comfortable and confident from day one.
+        </p>
+      </div>
+      <div class="wbjp-image">
+        <img
+          src="https://assets.cdn.filesafe.space/sGIiicZNhGBST5mFlpNt/media/6a38bb961c5d711b35e82958.png"
+          alt="Clients leaving the boutique feeling confident"
+          width="1200"
+          height="1000"
+          loading="lazy"
+        >
+      </div>
     </article>
   </div>
 </section>
+
+<script>
+  (function () {
+    var section = document.getElementById("wbj-process-section");
+    if (!section || section.dataset.ready === "true") return;
+    section.dataset.ready = "true";
+
+    var steps = section.querySelectorAll(".wbjp-step");
+
+    if (!("IntersectionObserver" in window)) {
+      steps.forEach(function (step) {
+        step.classList.add("wbjp-visible");
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("wbjp-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.16,
+      rootMargin: "0px 0px -8% 0px"
+    });
+
+    steps.forEach(function (step) {
+      observer.observe(step);
+    });
+  })();
+</script>

@@ -1,30 +1,344 @@
-<!-- SECTION 09: Approved public Google reviews. Keep source links attached to each quote. -->
-<section id="reviews" class="wbj wbj-section wbj-reviews" aria-labelledby="wbj-reviews-title">
-  <div class="wbj-shell wbj-reviews__grid">
-    <div class="wbj-reviews__heading">
-      <p class="wbj-eyebrow">Real Google reviews</p>
-      <h2 id="wbj-reviews-title">See What Your Neighbors Are Saying About Us</h2>
+<!-- WIGS BY JOLIE: COMPLETE REVIEWS SECTION -->
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600&display=swap");
+
+  #wbj-reviews-section,
+  #wbj-reviews-section * {
+    box-sizing: border-box;
+  }
+
+  #wbj-reviews-section {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    padding: clamp(64px, 7vw, 104px) 20px;
+    background: #ffffff;
+    color: #2f251f;
+    font-family: "Poppins", Arial, sans-serif;
+  }
+
+  #wbj-reviews-section .wbjr-shell {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+  }
+
+  #wbj-reviews-section .wbjr-heading {
+    max-width: 760px;
+    margin: 0 auto clamp(34px, 5vw, 58px);
+    text-align: center;
+  }
+
+  #wbj-reviews-section .wbjr-eyebrow {
+    margin: 0 0 12px;
+    color: #9f6c28;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  #wbj-reviews-section h2 {
+    margin: 0;
+    color: #5b2d0c;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+
+  #wbj-reviews-section .wbjr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+  }
+
+  #wbj-reviews-section .wbjr-card {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(25px, 3vw, 36px);
+    border: 1px solid #eadfce;
+    border-radius: 2px;
+    background: #fffaf4;
+    box-shadow: 0 16px 42px rgba(91, 45, 12, 0.07);
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 650ms ease,
+      transform 650ms ease,
+      border-color 250ms ease,
+      box-shadow 250ms ease;
+  }
+
+  #wbj-reviews-section .wbjr-card:nth-child(2) {
+    transition-delay: 110ms;
+  }
+
+  #wbj-reviews-section .wbjr-card:nth-child(3) {
+    transition-delay: 220ms;
+  }
+
+  #wbj-reviews-section.wbjr-visible .wbjr-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #wbj-reviews-section .wbjr-card:hover {
+    border-color: #d4aa62;
+    box-shadow: 0 20px 52px rgba(91, 45, 12, 0.12);
+    transform: translateY(-5px);
+  }
+
+  #wbj-reviews-section .wbjr-stars {
+    display: flex;
+    gap: 3px;
+    min-height: 34px;
+    margin: 0 0 18px;
+    color: #ffa41c;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  #wbj-reviews-section .wbjr-star {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(9px) scale(0.65) rotate(-10deg);
+  }
+
+  #wbj-reviews-section.wbjr-visible .wbjr-star {
+    animation: wbjr-star-in 480ms cubic-bezier(0.2, 0.8, 0.25, 1.35) forwards;
+  }
+
+  #wbj-reviews-section .wbjr-star:nth-child(1) { animation-delay: 260ms; }
+  #wbj-reviews-section .wbjr-star:nth-child(2) { animation-delay: 340ms; }
+  #wbj-reviews-section .wbjr-star:nth-child(3) { animation-delay: 420ms; }
+  #wbj-reviews-section .wbjr-star:nth-child(4) { animation-delay: 500ms; }
+  #wbj-reviews-section .wbjr-star:nth-child(5) { animation-delay: 580ms; }
+
+  @keyframes wbjr-star-in {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0);
+    }
+  }
+
+  #wbj-reviews-section .wbjr-name {
+    margin: 0 0 14px;
+    color: #5b2d0c;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  #wbj-reviews-section .wbjr-quote {
+    position: relative;
+    max-height: 150px;
+    overflow: hidden;
+    margin: 0;
+    color: #493b33;
+    font-size: 15px;
+    line-height: 1.75;
+    transition: max-height 450ms ease;
+  }
+
+  #wbj-reviews-section .wbjr-quote::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 58px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 250, 244, 0), #fffaf4 88%);
+    transition: opacity 200ms ease;
+  }
+
+  #wbj-reviews-section .wbjr-card.wbjr-expanded .wbjr-quote {
+    max-height: 1000px;
+  }
+
+  #wbj-reviews-section .wbjr-card.wbjr-expanded .wbjr-quote::after {
+    opacity: 0;
+  }
+
+  #wbj-reviews-section .wbjr-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    align-items: center;
+    margin-top: 22px;
+  }
+
+  #wbj-reviews-section .wbjr-more {
+    min-height: 44px;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    border-radius: 0;
+    background: transparent;
+    color: #7c4c17;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  #wbj-reviews-section .wbjr-more:hover {
+    color: #5b2d0c;
+  }
+
+  #wbj-reviews-section .wbjr-more:focus-visible {
+    outline: 3px solid rgba(255, 164, 28, 0.45);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 900px) {
+    #wbj-reviews-section .wbjr-grid {
+      grid-template-columns: 1fr;
+      width: min(680px, 100%);
+      margin: 0 auto;
+    }
+
+    #wbj-reviews-section .wbjr-card:nth-child(2),
+    #wbj-reviews-section .wbjr-card:nth-child(3) {
+      transition-delay: 80ms;
+    }
+  }
+
+  @media (max-width: 560px) {
+    #wbj-reviews-section {
+      padding: 58px 16px;
+    }
+
+    #wbj-reviews-section .wbjr-heading {
+      text-align: left;
+    }
+
+    #wbj-reviews-section h2 {
+      font-size: clamp(38px, 12vw, 52px);
+    }
+
+    #wbj-reviews-section .wbjr-card {
+      padding: 24px 21px;
+    }
+
+    #wbj-reviews-section .wbjr-stars {
+      font-size: 28px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #wbj-reviews-section .wbjr-card,
+    #wbj-reviews-section .wbjr-star,
+    #wbj-reviews-section .wbjr-quote {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<section id="wbj-reviews-section" aria-labelledby="wbjr-title">
+  <div class="wbjr-shell">
+    <header class="wbjr-heading">
+      <p class="wbjr-eyebrow">Real Reviews From Happy Customers</p>
+      <h2 id="wbjr-title">See What Your Neighbors Are Saying About Us</h2>
+    </header>
+
+    <div class="wbjr-grid">
+      <article class="wbjr-card">
+        <div class="wbjr-stars" aria-label="5 out of 5 stars">
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+        </div>
+        <h3 class="wbjr-name">Heidi Feser</h3>
+        <blockquote class="wbjr-quote">
+          Hands down this is the best place to get your hair. They have so many styles to choose from. Whether you need just a topper or a full wig, Nira will find something to your liking. She sells synthetic and human hair wigs. She also services them so you're always looking your best. She is very thorough and provides premier customer service without being pushy. She never makes me feel like she's there just to sell hair. She makes everyone feel beautiful. Stop in and find the look for you!
+        </blockquote>
+        <div class="wbjr-actions">
+          <button class="wbjr-more" type="button" aria-expanded="false">Read More</button>
+        </div>
+      </article>
+
+      <article class="wbjr-card">
+        <div class="wbjr-stars" aria-label="5 out of 5 stars">
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+        </div>
+        <h3 class="wbjr-name">Anne Marie Spiliotis</h3>
+        <blockquote class="wbjr-quote">
+          I walked in yesterday with a topper I purchased from somewhere else that i needed help with. It seems to be too much hair for me. the women greeted me so kindly when I walked in. She did not make me feel badly that I did not purchase from there and proceeded to put the piece on my head and rearrange my hair to show me how to better wear It. Then she suggested a bang would help and offered to cut my band slightly to help. She charged me $10 and I could not be happier. I will be going back there to purchase in the future. love this place!!!!!
+        </blockquote>
+        <div class="wbjr-actions">
+          <button class="wbjr-more" type="button" aria-expanded="false">Read More</button>
+        </div>
+      </article>
+
+      <article class="wbjr-card">
+        <div class="wbjr-stars" aria-label="5 out of 5 stars">
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+          <span class="wbjr-star" aria-hidden="true">&#9733;</span>
+        </div>
+        <h3 class="wbjr-name">Jacqueline Kaufman</h3>
+        <blockquote class="wbjr-quote">
+          I went to Wigs By Jolie hoping to find a "topper". I had ordered a wig on line and was not entirely satisfied with it, so before I tried a different wig from an on-line seller, I wanted to go to a retail store and see if they could make my shopping easier, and get some expert advice. At 72, my thinning hair around the crown was becoming very noticeable. I went there without an appointment, and was lucky, because I ended up with the owner helping me. She seemed to know exactly what would work for me, and found a wig that matched my dyed hair color with a human hair &amp; synthetic hair wig with soft highlights. She trimmed it and added clips to it to make it into a topper that I could easily put on myself, and feel good again about my hair again. No one really knows, or at least they haven't asked me if I'm wearing a topper, and I am pleased about that too. I've had a few compliments on how healthy and full my hair looks. I have owned it for about 2 months now, washed it with no problems, and am very happy overall. Was it inexpensive? No, but was it worth it? Yes! You get what you pay for in this world, and I'm very happy with my purchase. Thank you!
+        </blockquote>
+        <div class="wbjr-actions">
+          <button class="wbjr-more" type="button" aria-expanded="false">Read More</button>
+        </div>
+      </article>
     </div>
-
-    <article class="wbj-review">
-      <div class="wbj-review__meta"><span aria-label="5 out of 5 stars">★★★★★</span><span>3 months ago</span></div>
-      <h3>Heidi Feser</h3>
-      <blockquote>Hands down this is the best place to get your hair. They have so many styles to choose from. Whether you need just a topper or a full wig, Nira will find something to your liking. She sells synthetic and human hair wigs. She also services them so you're always looking your best. She is very thorough and provides premier customer service without being pushy. She never makes me feel like she's there just to sell hair. She makes everyone feel beautiful. Stop in and find the look for you!</blockquote>
-      <a href="https://www.google.com/maps/contrib/104931042060488826429/reviews?hl=en" target="_blank" rel="noopener">Read on Google</a>
-    </article>
-
-    <article class="wbj-review">
-      <div class="wbj-review__meta"><span aria-label="5 out of 5 stars">★★★★★</span><span>2 weeks ago</span></div>
-      <h3>Anne Marie Spiliotis</h3>
-      <blockquote>I walked in yesterday with a topper I purchased from somewhere else that i needed help with. It seems to be too much hair for me. the women greeted me so kindly when I walked in. She did not make me feel badly that I did not purchase from there and proceeded to put the piece on my head and rearrange my hair to show me how to better wear It. Then she suggested a bang would help and offered to cut my band slightly to help. She charged me $10 and I could not be happier. I will be going back there to purchase in the future. love this place!!!!!</blockquote>
-      <a href="https://www.google.com/maps/contrib/100496398906071961786/reviews?hl=en" target="_blank" rel="noopener">Read on Google</a>
-    </article>
-
-    <article class="wbj-review">
-      <div class="wbj-review__meta"><span aria-label="5 out of 5 stars">★★★★★</span><span>6 years ago</span></div>
-      <h3>Jacqueline Kaufman</h3>
-      <blockquote>I went to Wigs By Jolie hoping to find a "topper". I had ordered a wig on line and was not entirely satisfied with it, so before I tried a different wig from an on-line seller, I wanted to go to a retail store and see if they could make my shopping easier, and get some expert advice. At 72, my thinning hair around the crown was becoming very noticeable. I went there without an appointment, and was lucky, because I ended up with the owner helping me. She seemed to know exactly what would work for me, and found a wig that matched my dyed hair color with a human hair &amp; synthetic hair wig with soft highlights. She trimmed it and added clips to it to make it into a topper that I could easily put on myself, and feel good again about my hair again. No one really knows, or at least they haven't asked me if I'm wearing a topper, and I am pleased about that too. I've had a few compliments on how healthy and full my hair looks. I have owned it for about 2 months now, washed it with no problems, and am very happy overall. Was it inexpensive? No, but was it worth it? Yes! You get what you pay for in this world, and I'm very happy with my purchase. Thank you!</blockquote>
-      <a href="https://www.google.com/maps/contrib/112785307719145900836/reviews?hl=en-US" target="_blank" rel="noopener">Read on Google</a>
-    </article>
   </div>
 </section>
+
+<script>
+  (function () {
+    var section = document.getElementById("wbj-reviews-section");
+    if (!section || section.dataset.ready === "true") return;
+    section.dataset.ready = "true";
+
+    var reveal = function () {
+      section.classList.add("wbjr-visible");
+    };
+
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          reveal();
+          observer.disconnect();
+        }
+      }, { threshold: 0.18 });
+      observer.observe(section);
+    } else {
+      reveal();
+    }
+
+    section.querySelectorAll(".wbjr-more").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var card = button.closest(".wbjr-card");
+        var expanded = card.classList.toggle("wbjr-expanded");
+        button.setAttribute("aria-expanded", String(expanded));
+        button.textContent = expanded ? "Read Less" : "Read More";
+      });
+    });
+  })();
+</script>
